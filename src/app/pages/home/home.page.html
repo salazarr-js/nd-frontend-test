@@ -1,4 +1,95 @@
-<div>
-  <h2>home</h2>
-  <p>hola mundo</p>
-</div>
+
+<nd-navbar></nd-navbar>
+
+<!--  HOME HERO  -->
+<section class="home-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 my-4">
+        <h1 class="home-hero--title">Lorem ipsum Design</h1>
+        <p class="home-hero--text">Lorem ipsum dolor sit amet, consectetur adipi- scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <button class="home-hero--btn">Sign In</button>
+      </div>
+      <div class="col-md-6 my-4">
+        <div class="home-hero--img-container">
+          <img src="assets/images/cloud.svg" class="home-hero--cloud">
+          <img src="assets/images/cloud-small.svg" class="home-hero--cloud-small">
+          <img class="home-hero--bg" src="./assets/images/landing-hero-foreground.svg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  HOME HERO  -->
+
+
+<!--   HOME CONTENT  -->
+<section class="home-content" id="content-1"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 my-4">
+        <h2 class="home-content--title">Content 1</h2>
+        <p class="home-content--text">Lorem ipsum dolor sit amet, consectetur adipi- scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let card of [1,2,3,4]">
+        <article class="home-card">
+          <img src="assets/images/placeholder-img.svg" class="home-card--img">
+          <p class="home-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!--   HOME CONTENT  -->
+
+
+<!--   HOME PLANS  -->
+<section class="home-content home-plans bg-primary-light" id="content-2"> 
+  <div class="container relative">
+    <div class="home-plans--clouds-container">
+      <img src="assets/images/cloud.svg" class="home-plans--cloud">
+      <img src="assets/images/cloud-small.svg" class="home-plans--cloud-small">
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-5 my-4 text-right">
+        <h2 class="home-content--title">Content 2</h2>
+        <p class="home-content--text">Lorem ipsum dolor sit amet, consectetur adipi- scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <article class="home-plan">
+          <h3 class="home-plan--title"></h3>
+          <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
+          <button class="home-plan--btn"></button>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="home-plan primary">
+          <h3 class="home-plan--title"></h3>
+          <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
+          <button class="home-plan--btn"></button>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="home-plan">
+          <h3 class="home-plan--title"></h3>
+          <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
+          <button class="home-plan--btn"></button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!--   HOME PLANS  -->
+
+
+<footer>
+  <div class="container">
+    <a  class="footer-link" href="https://norte.digital/" target="_blank">
+      <img src="assets/images/header-logo-white.svg">
+    </a>
+  </div>
+</footer>

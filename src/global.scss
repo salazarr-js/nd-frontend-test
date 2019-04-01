@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+///  BOOTSTRAP STYLES  \\\
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/utilities/text";
+///  BOOTSTRAP STYLES  \\\
+
+
+@import "variables";
+
+html, body {
+  margin      : 0;
+  padding     : 0;
+  display     : block;
+  font-size   : 62.5%;
+  font-family : $primary-font;
+}
+
+///  UTILS  \\\
+.bg-primary-light { background-color: $primary-light; }
+.relative { position: relative; }
+///  UTILS  \\\

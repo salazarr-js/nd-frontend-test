@@ -1,4 +1,261 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+@import 'variables';
+
+:host {
+  display          : block;
+  background-color : $white;
 }
+
+
+///  HOME HERO  \\\
+.home-hero {
+  display         : flex;
+  padding         : 8rem 0;
+  position        : relative;
+  min-height      : 100vh;
+  align-items     : center;
+  justify-content : center;
+
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;    
+    bottom: 0;
+    content: '';
+    position: absolute;
+    background-size     : auto 100%;
+    background-image    : url('/assets/images/landing-hero-bg.svg');
+    background-repeat   : no-repeat;
+    background-position : right;
+  }
+  .home-hero--title {
+    color         : $dark;
+    margin        : 0;
+    font-size     : 4.8rem;
+    font-weight   : 800;
+    line-height   : 1.25;
+    margin-bottom : 1.6rem;
+  }
+  .home-hero--text {
+    color       : $gray;
+    margin      : 0 auto 4.8rem;
+    font-size   : 1.4rem;
+    font-weight : 400;
+  }
+  .home-hero--btn {
+    color            : $white;
+    border           : none;
+    padding          : 1.6rem 3.2rem;
+    outline          : none;
+    font-size        : 1.6rem;
+    transition       : all .15s ease-in-out;
+    font-weight      : 700;
+    // border-radius    : .4rem;
+    text-transform   : uppercase;
+    background-color : $primary;
+    &:hover {
+      box-shadow       : 0.4rem 0.4rem 1.2rem rgba($dark, .12);
+      background-color : $primary-dark;
+    }
+    &:active { outline: none; }
+  }
+
+  .home-hero--img-container {
+    width       : 100%;
+    display     : inline-block;
+    position    : relative;
+    padding-top : 8rem;
+    .home-hero--cloud, .home-hero--cloud-small {
+      left     : 50%;
+      height   : 3.2rem;
+      z-index  : 3;
+      position : absolute;
+    }
+    .home-hero--cloud {
+      top                       : 15%;
+      transform                 : translateX(175%);
+      animation-name            : cloud-animation;
+      animation-duration        : 20s;
+      animation-fill-mode       : both;
+      animation-direction       : alternate;
+      animation-timing-function : ease-in-out;
+      animation-iteration-count : infinite;
+    }
+    .home-hero--cloud-small {
+      top                       : 1.6rem;
+      transform                 : translateX(-125%);
+      animation-name            : small-cloud-animation;
+      animation-duration        : 25s;
+      animation-fill-mode       : both;
+      animation-direction       : alternate;
+      animation-timing-function : ease-in-out;
+      animation-iteration-count : infinite;
+    }
+    .home-hero--bg {
+      display  : block;
+      z-index  : 5;
+      position : relative;
+    }
+  }
+  @keyframes cloud-animation {
+    0% { transform: translateX(175%); }
+    100% { transform: translateX(-125%); }
+  }
+  @keyframes small-cloud-animation {
+    0% { transform: translateX(-125%); }
+    100% { transform: translateX(150%); }
+  }
+}
+///  HOME HERO  \\\
+
+
+///  HOME CONTENT  \\\
+.home-content {
+  padding: 8rem 0;
+
+  .home-content--title {
+    color       : $dark;
+    margin      : 0 0 1.6rem;
+    font-size   : 4.8rem;
+    line-height : 1.25;
+    font-weight : 800;
+  }
+  .home-content--text {
+    color     : $gray;
+    margin    : 0 auto 3.2rem;
+    font-size : 1.4rem;
+  }
+}
+///  HOME CONTENT  \\\
+
+
+
+///  HOME CARD \\\
+.home-card {
+  transition    : all .3s ease-in-out;
+  margin-bottom : 3.2rem;
+  .home-card--img {
+    margin        : 0;
+    display       : block;
+    transition    : all .3s ease-in-out;
+    margin-bottom : 1.6rem;
+  }
+  .home-card--text {
+    color      : $gray;
+    font-size  : 1.4rem;
+    transition : all .3s ease-in-out;
+  }
+  &:hover {
+    .home-card--img {
+      box-shadow: .4rem .4rem 1.8rem rgba($dark, .24);
+    }
+    .home-card--text {
+      color: $gray-dark;
+    }
+  }
+}
+///  HOME CARD \\\
+
+
+
+///  HOME PLAN  \\\
+.home-plans {
+  position: relative;
+  .home-plans--clouds-container {
+    top      : 0;
+    left     : 0;
+    right    : 0;
+    bottom   : 0;
+    position : absolute;
+    .home-plans--cloud, .home-plans--cloud-small {
+      top      : 1.6rem;
+      left     : 0;
+      position : absolute;
+    }
+    .home-plans--cloud {
+      top                       : 4.8rem;
+      height                    : 4.8rem;
+      transform                 : translateX(175%);
+      animation-name            : cloud-animation;
+      animation-duration        : 40s;
+      animation-fill-mode       : both;
+      animation-direction       : alternate;
+      animation-timing-function : ease-in-out;
+      animation-iteration-count : infinite;
+    }
+    .home-plans--cloud-small {
+      top                       : 1.6rem;
+      height                    : 3.2rem;
+      transform                 : translateX(-75%);
+      animation-name            : small-cloud-animation;
+      animation-duration        : 45s;
+      animation-fill-mode       : both;
+      animation-direction       : alternate;
+      animation-timing-function : ease-in-out;
+      animation-iteration-count : infinite;
+    }
+    @keyframes cloud-animation {
+      0% { transform: translateX(175%); }
+      100% { transform: translateX(-25%); }
+    }
+    @keyframes small-cloud-animation {
+      0% { transform: translateX(-75%); }
+      100% { transform: translateX(125%); }
+    }
+  }
+}
+.home-plan {
+  border        : .4rem solid $white;
+  padding       : 4.8rem 1.6rem;
+  margin-bottom : 3.2rem;
+  .home-plan--title, .home-plan--text, .home-plan--btn {
+    width            : 75%;
+    margin           : 0 auto;
+    display          : block;
+    background-color : $white;
+  }
+  .home-plan--title {
+    height        : 2.4rem;
+    margin-bottom : 3.2rem;
+  }
+  .home-plan--text {
+    height        : 1.2rem;
+    margin-bottom : 1.6rem;
+  }
+  .home-plan--btn {
+    border     : none;
+    height     : 3.2rem;
+    margin-top : 3.2rem;
+    outline: none;
+    &:active {
+      outline: none;
+    }
+  }
+  &.primary {
+    border-color: $primary;
+    .home-plan--title, .home-plan--text, .home-plan--btn {
+      background-color: $primary;
+    }
+
+  }
+}
+///  HOME PLAN  \\\
+
+
+
+///  FOOTER \\\
+footer {
+  padding          : 3.2rem 0;
+  text-align       : center;
+  background-color : $primary;
+  .footer-link {
+    opacity    : .75;
+    display    : inline-block;
+    transition : all .15s ease-in-out;
+    img {
+      height  : 6.4rem;
+      display : inline-block;
+    }
+    &:hover { opacity: 1; }
+  }
+}
+///  FOOTER \\

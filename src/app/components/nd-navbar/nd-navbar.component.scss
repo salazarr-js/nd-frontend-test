@@ -1,0 +1,52 @@
+@import 'variables';
+
+:host {
+  height          : 8rem;
+  display         : block;
+  display         : flex;
+  transition      : all .3s ease-in-out;
+  align-items     : center;
+  justify-content : center;
+
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  z-index : 9999;
+  position: fixed;
+  &.normal-light {
+    height           : 5.2rem;
+    box-shadow       : .4rem .4rem 1.2rem rgba($dark, .08);
+    background-color : $light;
+  }
+}
+
+.nb-navbar--container {
+  display         : flex;
+  align-items     : center;
+  justify-content : flex-end;
+}
+
+.nb-navbar--link {
+  color           : $dark;
+  margin          : 0 .2rem;
+  padding         : 1.2rem 1.6rem;
+  font-size       : 1.4rem;
+  transition      : all .15s ease-in-out;
+  font-weight     : 600;
+  line-height     : 1;
+  text-decoration : none;
+  &:hover {
+    box-shadow       : .2rem .2rem .8rem rgba($dark, .08);
+    border-radius    : .2rem;
+    text-decoration  : none;
+    background-color : $white;
+  }
+  &.primary {
+    color         : $primary;
+    border-radius : .4rem;
+    &:hover {
+      color            : $light;
+      background-color : $primary;
+    }
+  }
+}
