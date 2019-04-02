@@ -35,7 +35,9 @@
             "styles": [
               "src/global.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/scrollreveal/dist/scrollreveal.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

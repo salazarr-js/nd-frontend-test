@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { NdNavbarComponent } from '../../components/nd-navbar/nd-navbar.component';
 
+import { NgsRevealModule } from 'ngx-scrollreveal';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,10 +16,11 @@ import { NdNavbarComponent } from '../../components/nd-navbar/nd-navbar.componen
         component: HomePage
       }
     ]),
+    NgsRevealModule,
   ],
   declarations: [
-    HomePage,
-    NdNavbarComponent
+    NdNavbarComponent,
+    HomePage
   ]
 })
 export class HomePageModule {}

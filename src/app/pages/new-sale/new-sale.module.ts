@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NewSalePage } from './new-sale.page';
+import { NDSidebarComponent } from '../../components/nd-sidebar/nd-sidebar.component';
+
+// THIRD PARTYS
+import { NgxLoadingModule } from 'ngx-loading';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const routes: Routes = [
   {
@@ -14,8 +20,14 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    FormsModule,
+    RouterModule.forChild(routes),
+    NgxLoadingModule.forRoot({}),
+    NgSelectModule,
   ],
-  declarations: [NewSalePage]
+  declarations: [
+    NewSalePage,
+    NDSidebarComponent
+  ]
 })
 export class NewSalePageModule {}

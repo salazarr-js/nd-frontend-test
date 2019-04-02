@@ -1,17 +1,23 @@
 
-<nd-navbar></nd-navbar>
+<nd-navbar>
+  <a class="nb-navbar--link" href="#content-1">Content 1</a>
+  <a class="nb-navbar--link" href="#content-2">Content 2</a>
+  <a class="nb-navbar--link primary" routerLink="/new-sale">Sign In</a> -
+</nd-navbar>
 
 <!--  HOME HERO  -->
 <section class="home-hero">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 my-4">
-        <h1 class="home-hero--title">Lorem ipsum Design</h1>
-        <p class="home-hero--text">Lorem ipsum dolor sit amet, consectetur adipi- scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <button class="home-hero--btn">Sign In</button>
+        <h1 class="home-hero--title reveal" [ngsReveal]="{origin: 'top'}">Lorem ipsum Design</h1>
+        <p class="home-hero--text reveal" [ngsReveal]="{ delay: 150 }">Lorem ipsum dolor sit amet, consectetur adipi- scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <p class="reveal" [ngsReveal]="{ delay: 300 }">
+          <button class="home-hero--btn">Sign In</button>
+        </p>
       </div>
       <div class="col-md-6 my-4">
-        <div class="home-hero--img-container">
+        <div class="home-hero--img-container reveal" [ngsReveal]="{ delay: 500 }">
           <img src="assets/images/cloud.svg" class="home-hero--cloud">
           <img src="assets/images/cloud-small.svg" class="home-hero--cloud-small">
           <img class="home-hero--bg" src="./assets/images/landing-hero-foreground.svg">
@@ -33,7 +39,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3 col-sm-6" *ngFor="let card of [1,2,3,4]">
+      <div class="col-md-3 col-sm-6" *ngFor="let card of [1,2,3,4]; let i = index" [ngsReveal]="{delay: 150*i}">
         <article class="home-card">
           <img src="assets/images/placeholder-img.svg" class="home-card--img">
           <p class="home-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -60,21 +66,21 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <article class="home-plan">
+        <article class="home-plan reveal" ngsReveal>
           <h3 class="home-plan--title"></h3>
           <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
           <button class="home-plan--btn"></button>
         </article>
       </div>
       <div class="col-md-4">
-        <article class="home-plan primary">
+        <article class="home-plan primary reveal" [ngsReveal]="{ delay: 250 }">
           <h3 class="home-plan--title"></h3>
           <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
           <button class="home-plan--btn"></button>
         </article>
       </div>
       <div class="col-md-4">
-        <article class="home-plan">
+        <article class="home-plan reveal" ngsReveal>
           <h3 class="home-plan--title"></h3>
           <p class="home-plan--text" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12]"></p>
           <button class="home-plan--btn"></button>

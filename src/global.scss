@@ -22,3 +22,83 @@ html, body {
 .bg-primary-light { background-color: $primary-light; }
 .relative { position: relative; }
 ///  UTILS  \\\
+
+.reveal {
+  visibility: hidden;
+}
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.form-items .ng-select.nd-select {
+  margin-right: 1.6rem;
+}
+.ng-select.nd-select {
+  flex       : 1;
+  margin     : 0;
+  display    : block;
+  box-shadow : none;
+  transition : all .15s ease-in-out;
+  &.ng-select-focused, &:hover {
+    border     : none;
+    outline    : 0;
+    box-shadow : .2rem .2rem .8rem rgba($dark, .08);
+    &:not(.ng-select-opened) > .ng-select-container {
+      outline    : 0;
+      box-shadow : .2rem .2rem .8rem rgba($dark, .08);
+      border: none;
+    }
+  }
+  .ng-select-container  {            
+    height        : 4.8rem;
+    border        : none;
+    border-radius : 0;
+    .ng-value-container {
+      padding-left: 1.2rem;
+      .ng-placeholder { }
+      .ng-input {
+        top     : 0;
+        margin  : 0;
+        border  : none;
+        padding : 1.2rem 1.6rem;
+        input {
+          color       : $gray-dark;
+          margin      : 0;
+          padding     : 0;
+          font-size   : 1.8rem;
+          line-height : 1.35;
+        }
+      }
+      .ng-value .ng-value-label {
+        color       : $gray-dark;
+        margin      : 0;
+        padding     : 0;
+        font-size   : 1.8rem;
+        line-height : 1.35;
+      }
+    }
+    .ng-arrow-wrapper, .ng-clear-wrapper { display: none; }
+    .ng-has-value {
+      outline    : 0;
+      box-shadow : .2rem .2rem .8rem rgba($dark, .08);
+    }
+  }
+  .ng-dropdown-panel {
+    border        : none;
+    box-shadow    : .2rem .2rem .8rem rgba($dark, .08);
+    border-top    : 1px solid $gray-light;
+    border-radius : 0;
+    .ng-dropdown-panel-items {
+      .ng-option {
+        color       : $gray;
+        padding     : 1.2rem;
+        font-size   : 1.6rem;
+        transition  : all .15s ease-in-out;
+        line-height : 1;
+        font-weight : 600;
+        &.ng-option-marked {
+          color            : $dark;
+          background-color : $primary-light;
+        }
+      }
+    }
+  }
+}

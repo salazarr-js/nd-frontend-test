@@ -1,1 +1,113 @@
-<h2>New Sale</h2>
+<ngx-loading [show]="isLoading" [config]="loadingOpts"></ngx-loading>
+
+<nd-sidebar></nd-sidebar>  
+
+<div class="new-sale--container">
+  <div class="new-sale--header-container">
+    <img class="new-sale--header-img" src="assets/images/person.svg">
+    <h1 class="new-sale--header-title">New Sale</h1>
+  </div>
+
+  <!--   DOCUMENT  -->
+  <div class="form-container">
+    <h3 class="form--title">Document</h3>
+
+    <div class="row">
+      <div class="col-5">
+        <div class="form-item--container">
+          <label class="form-item--label" for="client">Client</label>
+          <div class="form-items">
+            <!-- <input class="form-item--input" type="text" id="client"> -->
+
+            <ng-select
+              id          = "client"
+              class       = "nd-select"
+              [items]     = "clients"
+              bindLabel   = "name"
+              bindValue   = "name"
+              [(ngModel)] = "selectedClient">
+            </ng-select>
+
+            <button class="form-item--btn"><img src="assets/images/icon-add.svg"></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="form-item--container">
+          <label class="form-item--label" for="branch-office">Branch office</label>
+          <!-- <input class="form-item--input" type="text" id="branch-office"> -->
+          <ng-select
+              id          = "branch-office"
+              class       = "nd-select"
+              [items]     = "branchOffices"
+              bindLabel   = "name"
+              bindValue   = "currencies[0].code"
+              (change)    = "onBranchOfficeChange($event)"
+              [(ngModel)] = "selectedBranchOffice">
+            </ng-select>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-item--container">
+          <label class="form-item--label" for="currency">Currency</label>
+          <input class="form-item--input" type="text" id="currency" readonly [value]="selectedCurrency">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   DOCUMENT  -->
+
+
+  <!--  DETAILS  -->
+  <div class="form-container">
+    <h3 class="form--title">Details</h3>
+
+    <div class="row form-row" *ngFor="let p of selectedProducts; let i = index">
+      <div class="col-5">
+        <div class="form-item--container">
+          <label class="form-item--label">Name</label>
+          <!-- <input class="form-item--input" type="text" id="name"> -->
+          <ng-select
+              class       = "nd-select"
+              [items]     = "products"
+              bindLabel   = "Title"
+              bindValue   = "Title"
+              (change)    = "onSelectedProductChange($event, i)"
+              [(ngModel)] = "p.name">
+            </ng-select>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-item--container">
+          <label class="form-item--label" for="quantity">Quantity</label>
+          <input class="form-item--input" type="text" id="quantity" [(ngModel)]="p.quantity" (keyup)="onQuantityPriceChange(i)">
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-item--container">
+          <label class="form-item--label" for="price">Price</label>
+          <input class="form-item--input" type="text" id="price" [(ngModel)]="p.price" (keyup)="onQuantityPriceChange(i)">
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-item--container">
+          <label class="form-item--label" for="subtotal">Subtotal</label>
+          <input class="form-item--input" type="text" id="subtotal" readonly [value]="p.subtotal">
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="form-item--container">
+          <button class="form-item--btn" (click)="removeProduct(i)"><img src="assets/images/icon-remove.svg"></button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="primary-btn" (click)="addProduct()">Add</button>
+    </div>
+  </div>
+  <!--  DETAILS  -->
+
+
+
+</div>
