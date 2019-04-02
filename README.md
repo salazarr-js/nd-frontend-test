@@ -21,3 +21,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 > - Uso un sistema de carpetas un poco personalizado parecido al usado en `Ionic`
 > - Los componentes etiquetados como `pages` son modulos `Lazy Loaded`
 > - En el caso de los `productos` asumo que el `precio` se coloca manualmente ya que no viene en el `json`
+> - Los tiempos de espera del endpoint `https://fakerestapi.azurewebsites.net/api/books` suelen ser muy largos
