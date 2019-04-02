@@ -148,7 +148,8 @@
     margin-right : 1.6rem;
   }
   .form-item--input {
-    width   : auto;
-    display : inline-block;
+    width     : 24rem;
+    display   : inline-block;
+    min-width : 0;
   }
 }

@@ -23,7 +23,7 @@ export class APIService {
 
   /** */
   getProducts(): Promise<any> {
-    return this.http.get('http://fakerestapi.azurewebsites.net/api/books')
+    return this.http.get('https://fakerestapi.azurewebsites.net/api/books')
       .toPromise()
   }
 }
