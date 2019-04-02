@@ -20,15 +20,19 @@
             <!-- <input class="form-item--input" type="text" id="client"> -->
 
             <ng-select
-              id          = "client"
               class       = "nd-select"
               [items]     = "clients"
               bindLabel   = "name"
               bindValue   = "name"
               [(ngModel)] = "selectedClient">
             </ng-select>
-
-            <button class="form-item--btn"><img src="assets/images/icon-add.svg"></button>
+            <button
+              class     = "form-item--btn"
+              [swal]    = "{ title: 'Add a new client', input: 'text', confirmButtonColor: '#279AFF', confirmButtonText: 'Add' }"
+              (confirm) = "addClient($event)"
+            >
+              <img src = "assets/images/icon-add.svg">
+            </button>
           </div>
         </div>
       </div>
@@ -68,25 +72,25 @@
           <label class="form-item--label">Name</label>
           <!-- <input class="form-item--input" type="text" id="name"> -->
           <ng-select
-              class       = "nd-select"
-              [items]     = "products"
-              bindLabel   = "Title"
-              bindValue   = "Title"
-              (change)    = "onSelectedProductChange($event, i)"
-              [(ngModel)] = "p.name">
-            </ng-select>
+            class       = "nd-select"
+            [items]     = "products"
+            bindLabel   = "Title"
+            bindValue   = "Title"
+            (change)    = "onSelectedProductChange($event, i)"
+            [(ngModel)] = "p.name">
+          </ng-select>
         </div>
       </div>
       <div class="col-2">
         <div class="form-item--container">
           <label class="form-item--label" for="quantity">Quantity</label>
-          <input class="form-item--input" type="text" id="quantity" [(ngModel)]="p.quantity" (keyup)="onQuantityPriceChange(i)">
+          <input class="form-item--input" type="number" id="quantity" [(ngModel)]="p.quantity" (keyup)="calcSubtotal(i)">
         </div>
       </div>
       <div class="col-2">
         <div class="form-item--container">
           <label class="form-item--label" for="price">Price</label>
-          <input class="form-item--input" type="text" id="price" [(ngModel)]="p.price" (keyup)="onQuantityPriceChange(i)">
+          <input class="form-item--input" type="string" id="price" [(ngModel)]="p.price" (keyup)="calcSubtotal(i)">
         </div>
       </div>
       <div class="col-2">
@@ -102,8 +106,25 @@
       </div>
     </div>
 
-    <div>
-      <button class="primary-btn" (click)="addProduct()">Add</button>
+    <div class="row form-row">
+      <div class="col">
+        <button class="primary-btn" (click)="addProduct()">Add</button>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col">
+        <div class="form-item--container" id="form-item--total">
+          <label class="form-item--label" for="total">Total</label>
+          <input class="form-item--input" type="text" id="total" readonly [value]="total | currency:selectedCurrency">
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-12 text-right">
+        <button class="primary-btn">Save</button>
+      </div>
     </div>
   </div>
   <!--  DETAILS  -->

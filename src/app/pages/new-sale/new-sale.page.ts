@@ -30,6 +30,8 @@ export class NewSalePage implements OnInit {
   public selectedCurrency     : string;
   public selectedProducts     : Array<ProductInterface>
 
+  public total : number;
+
   public isLoading   : boolean;
   public loadingOpts : NgxLoadingConfig;
 
@@ -42,6 +44,8 @@ export class NewSalePage implements OnInit {
     this.selectedBranchOffice = '';
     this.selectedCurrency     = '';
     this.selectedProducts     = [];
+
+    this.total = 0;
 
     this.isLoading   = false;
     this.loadingOpts = {
@@ -56,22 +60,28 @@ export class NewSalePage implements OnInit {
     this.isLoading = true;
     this.addProduct();
 
-    this._api.getClients().then(clients => this.clients = clients)
-    .then(_ => console.log('CLIENTS', this.clients) )
-    .then(_ => this._api.getBranchOffices() )
-    .then(branchOffices => this.branchOffices = branchOffices)
-    .then(_ => console.log('BRANCH OFFICES',this.branchOffices) )
-    .then(_ => this._api.getProducts() )
-    .then(products => this.products = products)
-    .then(_ => console.log('PRODUCTS',this.products) )
-    .then(_ => this.isLoading = false )
-    .catch(err => {
-      console.log('OCURRIO UN ERROR', err);
-      this.isLoading = false;
-    });
+    this._api.getClients()
+      .then(clients => this.clients = clients)
+      .then(_ => this._api.getBranchOffices() )
+      .then(branchOffices => this.branchOffices = branchOffices)
+      .then(_ => this._api.getProducts() )
+      .then(products => this.products = products)
+      .then(_ => this.isLoading = false )
+      .catch(err => {
+        console.log('OCURRIO UN ERROR', err);
+        this.isLoading = false;
+      });
   }
 
-  /** */
+  /** AGREGA UN NUEVO CLIENTE AL ARRAY `clients` */
+  addClient(newClient): void {
+    if ( newClient != '' ){
+      this.clients = [...this.clients, { name: newClient}];
+      this.selectedClient = newClient;
+    }
+  }
+
+  /** AGREGA UN PRODUCTO VACIO AL ARRAY DE `selectedProducts` */
   addProduct(): void {
     this.selectedProducts.push({
       name: '', quantity: 1, price: 0, subtotal: 0
@@ -79,25 +89,31 @@ export class NewSalePage implements OnInit {
   }
 
 
-  /** */
+  /** REMUEVE EL PRODUCTO SELECCIONADO DEL ARRAY `selectedProducts` */
   removeProduct(index): void {
     this.selectedProducts.splice(index, 1);
   }
 
-  /** */
+  /** SELECCIONA EL CODIGO DE LA MONEDA DEL `brachOffice` CUANDO CAMBIA DE VALOR */
   onBranchOfficeChange(branchOffice): void {
     this.selectedCurrency = branchOffice.currencies[0].code;
   }
-
 
   /** */
   onSelectedProductChange(product, pIndex): void {
     //
   }
 
-  /** */
-  onQuantityPriceChange(index): void {
+  /** CALCULA EL SUBTOTAL CUANDO CAMBIE LA CANTIDAD O EL PRECIO DEL PRODUCTO */
+  calcSubtotal(index): void {
     let p = this.selectedProducts[index];
     p.subtotal = p.quantity * p.price;
+
+    this.calcTotal();
+  }
+
+  /** CALCULAR TOTAL DE VENTA */
+  calcTotal(): void {
+    this.total = this.selectedProducts.reduce((prev, val) => prev + val.subtotal, 0)
   }
 }

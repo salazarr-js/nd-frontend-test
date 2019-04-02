@@ -83,8 +83,7 @@
       transition       : all .15s ease;
       line-height      : 1;
       background-color : $white;
-
-      &:focus {
+      &:focus, &:hover {
         outline    : 0;
         box-shadow : .2rem .2rem .8rem rgba($dark, .08);
       }
@@ -116,6 +115,9 @@
         display : block;
       }
     }
+    &.inline {
+      display: flex;
+    }
   }
 }
 
@@ -133,4 +135,18 @@
     background-color : $primary-dark;
   }
   &:active { outline: none; transform  : scale3d(.9, .9, 1); }
+}
+
+#form-item--total {
+  display         : flex;
+  justify-content : flex-end;
+  justify-content : center;
+  .form-item--label {
+    margin       : auto;
+    margin-right : 1.6rem;
+  }
+  .form-item--input {
+    width   : auto;
+    display : inline-block;
+  }
 }
