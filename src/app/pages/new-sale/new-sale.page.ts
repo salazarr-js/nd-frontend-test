@@ -57,7 +57,7 @@ export class NewSalePage implements OnInit {
   }
 
   ngOnInit() {
-    // this.isLoading = true;
+    this.isLoading = true;
     this.addProduct();
 
     this._api.getClients()
