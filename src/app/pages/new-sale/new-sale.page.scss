@@ -124,7 +124,7 @@
 .primary-btn {
   color            : $white;
   border           : none;
-  padding          : .8rem 3.2rem;
+  padding          : .8rem 4.8rem;
   outline          : none;
   font-size        : 1.6rem;
   transition       : all .15s ease-in-out;
@@ -142,7 +142,9 @@
   justify-content : flex-end;
   justify-content : center;
   .form-item--label {
+    color        : $gray-dark;
     margin       : auto;
+    font-weight  : 600;
     margin-right : 1.6rem;
   }
   .form-item--input {

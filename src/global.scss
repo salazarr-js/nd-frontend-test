@@ -21,12 +21,18 @@ html, body {
 ///  UTILS  \\\
 .bg-primary-light { background-color: $primary-light; }
 .relative { position: relative; }
+.flex-2 { flex: 2; }
 ///  UTILS  \\\
 
+
+/// ERVEAL \\\
 .reveal {
   visibility: hidden;
 }
+/// ERVEAL \\\
 
+
+/// NG SELECT  \\
 @import "~@ng-select/ng-select/themes/default.theme.css";
 .form-items .ng-select.nd-select {
   margin-right: 1.6rem;
@@ -102,3 +108,4 @@ html, body {
     }
   }
 }
+/// NG SELECT  \\

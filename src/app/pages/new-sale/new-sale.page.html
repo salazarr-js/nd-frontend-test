@@ -67,7 +67,7 @@
     <h3 class="form--title">Details</h3>
 
     <div class="row form-row" *ngFor="let p of selectedProducts; let i = index">
-      <div class="col-5">
+      <div class="col col-5">
         <div class="form-item--container">
           <label class="form-item--label">Name</label>
           <!-- <input class="form-item--input" type="text" id="name"> -->
@@ -81,25 +81,25 @@
           </ng-select>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col">
         <div class="form-item--container">
           <label class="form-item--label" for="quantity">Quantity</label>
           <input class="form-item--input" type="number" id="quantity" [(ngModel)]="p.quantity" (keyup)="calcSubtotal(i)">
         </div>
       </div>
-      <div class="col-2">
+      <div class="col">
         <div class="form-item--container">
           <label class="form-item--label" for="price">Price</label>
           <input class="form-item--input" type="string" id="price" [(ngModel)]="p.price" (keyup)="calcSubtotal(i)">
         </div>
       </div>
-      <div class="col-2">
+      <div class="col">
         <div class="form-item--container">
           <label class="form-item--label" for="subtotal">Subtotal</label>
           <input class="form-item--input" type="text" id="subtotal" readonly [value]="p.subtotal">
         </div>
       </div>
-      <div class="col-1">
+      <div class="col col-auto">
         <div class="form-item--container">
           <button class="form-item--btn" (click)="removeProduct(i)"><img src="assets/images/icon-remove.svg"></button>
         </div>
