@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { APIService } from 'src/app/services/api.service';
 //  THIRD PARTYS
 import { NgxLoadingConfig, ngxLoadingAnimationTypes } from 'ngx-loading';
+import { Router } from '@angular/router';
 
 
 // PRODUCTs INTERFACE
@@ -35,7 +36,7 @@ export class NewSalePage implements OnInit {
   public isLoading   : boolean;
   public loadingOpts : NgxLoadingConfig;
 
-  constructor(private _api: APIService) {
+  constructor(private _api: APIService, private route: Router) {
     this.clients       = [];
     this.branchOffices = [];
     this.products      = [];
@@ -56,6 +57,7 @@ export class NewSalePage implements OnInit {
     };
   }
 
+  /** */
   ngOnInit() {
     this.isLoading = true;
     this.addProduct();
