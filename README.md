@@ -1,5 +1,8 @@
-# ngNDFrontEndTest
+# NDFrontEndTest
 Test project to apply as `Front End Developer` in [Norte Digital](https://norte.digital/en/home/).
+
+![Alt text](/src/assets/images/screenshot-home.png?raw=true "Home page screenshot")
+![Alt text](/src/assets/images/screenshot-sales.png?raw=true "Sales page screenshot")
 
 ## Prerequisites
 Before you begin, make sure your development environment includes `Node.js`, an `npm` package manager and the version control system `GIT`. 
@@ -15,10 +18,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-
-## Project Comments
-> - Uso un sistema de carpetas un poco personalizado parecido al usado en `Ionic`
-> - Los componentes etiquetados como `pages` son modulos `Lazy Loaded`
-> - En el caso de los `productos` asumo que el `precio` se coloca manualmente ya que no viene en el `json`
-> - Los tiempos de espera del endpoint `https://fakerestapi.azurewebsites.net/api/books` suelen ser muy largos
