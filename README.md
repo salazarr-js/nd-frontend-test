@@ -1,8 +1,9 @@
 # NDFrontEndTest
 Test project to apply as `Front End Developer` in [Norte Digital](https://norte.digital/en/home/).
 
-![Alt text](/src/assets/images/screenshot-home.png?raw=true "Home page screenshot")
-![Alt text](/src/assets/images/screenshot-sales.png?raw=true "Sales page screenshot")
+| Home | Page |
+|------|------|
+| ![Alt text](/src/assets/images/screenshot-home.png?raw=true "Home page screenshot") | ![Alt text](/src/assets/images/screenshot-sales.png?raw=true "Sales page screenshot") |
 
 ## Prerequisites
 Before you begin, make sure your development environment includes `Node.js`, an `npm` package manager and the version control system `GIT`. 
