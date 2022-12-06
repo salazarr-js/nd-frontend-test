@@ -16,6 +16,7 @@ html, body {
   display     : block;
   font-size   : 62.5%;
   font-family : $primary-font;
+  scroll-behavior: smooth;
 }
 
 ///  UTILS  \\\
@@ -53,7 +54,7 @@ html, body {
       border: none;
     }
   }
-  .ng-select-container  {            
+  .ng-select-container  {
     height        : 4.8rem;
     border        : none;
     border-radius : 0;
