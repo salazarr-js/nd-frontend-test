@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +16,13 @@ export class APIService {
 
   /** */
   getBranchOffices(): Promise<any> {
-    return this.http.get('https://restcountries.eu/rest/v2/region/americas')
+    return this.http.get('https://restcountries.com/v2/region/americas')
       .toPromise()
   }
 
   /** */
   getProducts(): Promise<any> {
-    return this.http.get('https://fakerestapi.azurewebsites.net/api/books')
+    return this.http.get('https://fakerestapi.azurewebsites.net/api/v1/Books')
       .toPromise()
   }
 }

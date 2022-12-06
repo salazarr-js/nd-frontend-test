@@ -1,6 +1,6 @@
 <ngx-loading [show]="isLoading" [config]="loadingOpts"></ngx-loading>
 
-<nd-sidebar></nd-sidebar>  
+<nd-sidebar></nd-sidebar>
 
 <div class="new-sale--container">
   <div class="new-sale--header-container">
@@ -74,8 +74,8 @@
           <ng-select
             class       = "nd-select"
             [items]     = "products"
-            bindLabel   = "Title"
-            bindValue   = "Title"
+            bindLabel   = "title"
+            bindValue   = "title"
             (change)    = "onSelectedProductChange($event, i)"
             [(ngModel)] = "p.name">
           </ng-select>
