@@ -1,8 +1,6 @@
-# NDFrontEndTest
+# 💻 Norte Digital Front End Test
 
-⚙️ Technical test for [Norte Digital](https://norte.digital/en/home/) `Front End Developer` role
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/846435bb-807b-4ec9-84dd-b1c988554185/deploy-status)](https://app.netlify.com/sites/nd-frontend-test/deploys)
+Front-end technical test for [Norte Digital](https://norte.digital/)
 
 | Home | Page |
 |------|------|
