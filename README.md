@@ -1,6 +1,6 @@
 # 💻 Norte Digital - `Front End` test
 
-`Front-end` technical test for [Norte Digital](https://norte.digital/)
+Front End technical test for [Norte Digital](https://norte.digital/)
 
 | Home | Page |
 |------|------|
