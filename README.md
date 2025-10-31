@@ -1,6 +1,6 @@
 # NDFrontEndTest
 
-Test project to apply as `Front End Developer` in [Norte Digital](https://norte.digital/en/home/).
+⚙️ Technical test for [Norte Digital](https://norte.digital/en/home/) `Front End Developer` role
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/846435bb-807b-4ec9-84dd-b1c988554185/deploy-status)](https://app.netlify.com/sites/nd-frontend-test/deploys)
 
